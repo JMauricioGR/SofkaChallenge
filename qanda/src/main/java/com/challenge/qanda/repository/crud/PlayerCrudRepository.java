@@ -14,5 +14,5 @@ import org.springframework.data.mongodb.repository.MongoRepository;
  * @author JehisonGalarza
  */
 public interface PlayerCrudRepository extends MongoRepository<Player, Integer> {
-    Optional<Player> findTop1ByIdPlayerDesc();
+    Optional<Player> findTop1ByOrderByIdPlayerDesc();
 }

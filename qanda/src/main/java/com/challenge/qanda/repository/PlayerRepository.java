@@ -22,7 +22,7 @@ public class PlayerRepository {
     private PlayerCrudRepository playerCrudRepository;
     
     public Optional<Player> getLastPlayer(){
-        return playerCrudRepository.findTop1ByIdPlayerDesc();
+        return playerCrudRepository.findTop1ByOrderByIdPlayerDesc();
     }
     
     public List<Player> getAllPlayers(){
