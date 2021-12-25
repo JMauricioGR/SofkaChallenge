@@ -51,4 +51,9 @@ public class QuestionController {
     public List<Question> getQuestionDesc(){
         return questionService.getQuestionsDesc();
     }
+    
+    @GetMapping("{level}")
+    public List<Question> getQuestionsByLevel(@PathVariable("level") Integer level){
+        return questionService.getQuestionsByLevel(level);
+    }
 }

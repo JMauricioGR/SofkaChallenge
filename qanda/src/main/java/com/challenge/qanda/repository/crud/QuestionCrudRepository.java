@@ -16,6 +16,6 @@ import org.springframework.data.repository.query.Param;
  * @author JehisonGalarza
  */
 public interface QuestionCrudRepository extends MongoRepository <Question, Integer>{
-    //@Query("{}.sort({"idQuestion":-1}).limit(4)")
     List<Question> findTop1ByOrderByIdQuestionDesc();
+    List<Question> findByLevel(Integer level);
 }

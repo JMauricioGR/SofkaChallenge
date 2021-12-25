@@ -40,4 +40,8 @@ public class QuestionService {
     public List<Question> getQuestionsDesc(){
         return questionRepository.getQuestionsDesc();
     }
+    
+    public List<Question> getQuestionsByLevel(Integer level){
+        return questionRepository.getQuestionsByLevel(level);
+    }
 }

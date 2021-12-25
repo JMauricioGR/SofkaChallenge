@@ -34,5 +34,10 @@ public class QuestionRepository {
     }
     
     public List<Question> getQuestionsDesc(){
-        return questionCrudRepository.findTop1ByOrderByIdQuestionDesc();    }
+        return questionCrudRepository.findTop1ByOrderByIdQuestionDesc();
+    }
+    
+    public List<Question> getQuestionsByLevel(Integer level){
+        return questionCrudRepository.findByLevel(level);
+    }
 }
