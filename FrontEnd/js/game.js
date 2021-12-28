@@ -3,12 +3,16 @@ function primeraRonda(){
     let userName = $('#userName').val(),
         regZone = document.querySelector("#register-zone"),
         r1Zone = document.querySelector("#ronda1");
+        pointsZone = document.querySelector("#pointsZone");
+    
     sessionStorage.setItem('userName', userName);
     
     regZone.classList.remove('visible');
     regZone.classList.add('hide');
     r1Zone.classList.remove('hide');
     r1Zone.classList.add('visible');
+    pointsZone.classList.remove('hide');
+    pointsZone.classList.add('visible');
 }
 
 function segundaRonda(){
@@ -82,7 +86,7 @@ function gameControl(id){
 }
 
 function playerEnd(){
-    
+    alert('El jugador termina la partida');
     let name = sessionStorage.getItem('userName'),
         prize = sessionStorage.getItem('globalPrize'),
         level = sessionStorage.getItem('playerLevel');
@@ -90,4 +94,12 @@ function playerEnd(){
     savePlayer(name, prize, level);
     alert('Gracias por jugar tus puntos fueron: '+ prize +', puedes volver a jugar, te esperamos.');
     location.reload();
+}
+
+function points(){
+    let gPrize = parseInt($('#userPoints').val());
+
+    gPrize += parseInt(sessionStorage.getItem('prizeValue'));
+    sessionStorage.setItem('globalPrize', gPrize);
+    $('#userPoints').val(sessionStorage.getItem('globalPrize'));
 }

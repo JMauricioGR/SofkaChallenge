@@ -86,7 +86,7 @@ function selectedOption(id){
         elemId0 = document.getElementById(idSelected0),
         elemId1 = document.getElementById(idSelected1),
         elemId2 = document.getElementById(idSelected2),
-        elemId3 = document.getElementById(idSelected3)
+        elemId3 = document.getElementById(idSelected3),
         option0 = elemId0.options[elemId0.selectedIndex],
         option1 = elemId1.options[elemId1.selectedIndex],
         option2 = elemId2.options[elemId2.selectedIndex],
@@ -103,9 +103,7 @@ function selectedOption(id){
         if(option0.value == sessionStorage.getItem('optionValidate')){
             getQuestionByLevel(id+1);
             gameControl(id);
-            let gPrize = sessionStorage.getItem('globalPrize');            
-            gPrize += parseInt(sessionStorage.getItem('prizeValue'));
-            sessionStorage.setItem('globalPrize', gPrize);
+            points();
         } else {
             alert('Lo sentimos has perdido :(');
             sessionStorage.clear();
@@ -115,9 +113,7 @@ function selectedOption(id){
         if(option1.value == sessionStorage.getItem('optionValidate')){
             getQuestionByLevel(id+1);
             gameControl(id);
-            let gPrize = sessionStorage.getItem('globalPrize');            
-            gPrize += parseInt(sessionStorage.getItem('prizeValue'));
-            sessionStorage.setItem('globalPrize', gPrize);
+            points();
         } else {
             alert('Lo sentimos has perdido :(');
             sessionStorage.clear();
@@ -127,9 +123,7 @@ function selectedOption(id){
         if(option2.value == sessionStorage.getItem('optionValidate')){
             getQuestionByLevel(id+1);
             gameControl(id);
-            let gPrize = sessionStorage.getItem('globalPrize');            
-            gPrize += parseInt(sessionStorage.getItem('prizeValue'));
-            sessionStorage.setItem('globalPrize', gPrize);
+            points();
         } else {
             alert('Lo sentimos has perdido :(');
             sessionStorage.clear();
@@ -139,9 +133,7 @@ function selectedOption(id){
         if(option3.value == sessionStorage.getItem('optionValidate')){
             getQuestionByLevel(id+1);
             gameControl(id);
-            let gPrize = sessionStorage.getItem('globalPrize');            
-            gPrize += parseInt(sessionStorage.getItem('prizeValue'));
-            sessionStorage.setItem('globalPrize', gPrize);
+            points();
         } else {
             alert('Lo sentimos has perdido :(');
             sessionStorage.clear();

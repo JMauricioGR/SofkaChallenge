@@ -1,4 +1,6 @@
-
+$(document).ready(function(){
+    getAllPlayers();
+})
 
 function getAllPlayers(){
     $.ajax({
@@ -8,7 +10,7 @@ function getAllPlayers(){
 
         success: function(respuesta){
             console.log(respuesta);
-
+            rankingList(respuesta);
         },
         error: function(xhr, status){
             console.log("Error al consultar las preguntas " + status);
@@ -34,7 +36,6 @@ function savePlayer( name, prize, level){
             data: datajson,
             success: function(respuesta){
                 console.log("Jugador creado, datos: " + respuesta);
-                alert("Jugador creado, datos: " + respuesta);
             },
             error(xhr, status){
                 console.log("No se pudo crear el jugador: " + status);
@@ -43,3 +44,26 @@ function savePlayer( name, prize, level){
         });
 }
 
+function rankingList(items){
+    $('#tableContainer').html('');
+    
+    let table = `<table class="table">
+    <tr>
+    <th>Nombre</th>
+    <th>Último nivel</th>
+    <th>Premio</th>
+    </tr>
+    `
+    for (let i = 0; i < items.length; i++) {
+        table += `<tr>
+        <td>${items[i].name}</td>
+        <td>${items[i].level}</td>
+        <td>${items[i].prize}</td>
+        </tr>`;        
+    }
+    
+    table += `</table>`;
+    
+    $('#tableContainer').html(table);
+    
+}

@@ -15,8 +15,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="./js/question.js"></script>
     <script src="./js/options.js"></script>
-    <script src="./js/player.js"></script>
     <script src="./js/game.js"></script>
+    <script src="./js/player.js"></script>
 </head>
 
 <body>
@@ -45,8 +45,12 @@
         </nav>
     </header>
     <main>
-        <div class="container d-flex flex-wrap justify-content-center align-content-center" style="height: 80vh;">
-            <div class="col-lg-6 col-md-10 col-sm-12">
+        <div class="container d-flex flex-wrap justify-content-center align-content-center" style="height: 90vh;">
+            <div class="position-fixed top-10 right-100 d-flex" id="pointsZone">
+                <img src="https://img.icons8.com/external-kiranshastry-lineal-kiranshastry/64/000000/external-coin-investment-kiranshastry-lineal-kiranshastry.png" width="50" height="40" id="coin"/>
+                <input type="number" name="pointswon" id="userPoints" value="0" disabled>
+            </div>
+            <div class="col-lg-7 col-md-10 col-sm-12 glass">
                 <div class="register visible" id="register-zone">
                     <form class=" ">
                         <h3 class="">Registro</h3>
@@ -61,17 +65,17 @@
                         </div>
                     </form>
                 </div>
-                <div class="ronda hide" id="ronda1">
+                <div class="hide" id="ronda1">
                     Ronda 1
                     <div class="mb-2" id="pregunta-r1"></div>
                     <div id="opciones-r1"></div>
                     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal1" >
                         Continuar
                     </button>
-                    <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel"
+                    <div class="modal fade" id="exampleModal1" tabindex="-3" aria-labelledby="exampleModalLabel"
                         aria-hidden="true">
                         <div class="modal-dialog">
-                            <div class="modal-content">
+                            <div class="modal-content" >
                                 <div class="modal-header">
                                     <h5 class="modal-title" id="exampleModalLabel">Considera lo siguiente</h5>
                                     <button type="button" class="btn-close" data-bs-dismiss="modal"
@@ -89,7 +93,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="ronda hide" id="ronda2">
+                <div class="hide" id="ronda2">
                     Ronda 2
                     <div class="mb-2" id="pregunta-r2"></div>
                     <div id="opciones-r2"></div>
@@ -117,7 +121,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="ronda hide" id="ronda3">
+                <div class="hide" id="ronda3">
                     Ronda 3
                     <div class="mb-2" id="pregunta-r3"></div>
                     <div id="opciones-r3"></div>
@@ -145,7 +149,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="ronda hide" id="ronda4">
+                <div class="hide" id="ronda4">
                     Ronda 4
                     <div class="mb-2" id="pregunta-r4"></div>
                     <div id="opciones-r4"></div>
@@ -173,7 +177,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="ronda hide" id="ronda5">
+                <div class="hide" id="ronda5">
                     Ronda 5
                     <div class="mb-2" id="pregunta-r5"></div>
                     <div id="opciones-r5"></div>
@@ -207,7 +211,7 @@
             </div>
         </div>
     </main>
-    <footer class="container-fluid position-fixed bottom-0 bg-light">
+    <footer class="container-fluid position-fixed bottom-0 bg-light pt-3">
         <div class="d-flex flex-wrap justify-content-end">
             <p class="p-2">Prueba de ingreso a Sofka U</p>
 
