@@ -21,19 +21,11 @@ public class PlayerService {
     @Autowired
     private PlayerRepository playerRepository;
 
-    public Optional<Player> getLastPlayer(){
-        return playerRepository.getLastPlayer();
-    }
-    
     public List<Player> getAllPlayers(){
         return playerRepository.getAllPlayers();
     }
     
-    public Player createPlayer(Player player){
-        if (player.getIdPlayer() == null){
-            return player;
-        }else{        
-            return playerRepository.createPlayer(player);
-        }
+    public Player createPlayer(Player player){       
+        return playerRepository.createPlayer(player);   
     }
 }

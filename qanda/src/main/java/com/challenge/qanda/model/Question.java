@@ -24,6 +24,5 @@ public class Question {
     private Integer idQuestion;
     private String question;
     private Integer prize;
-    private Options options;
     private Integer level;  
 }

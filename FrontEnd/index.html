@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./css/styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="./js/question.js"></script>
+    <script src="./js/options.js"></script>
+    <script src="./js/player.js"></script>
+    <script src="./js/game.js"></script>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">PREGUNTAS Y RESPUESTAS</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="./index.html">Jugar</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./ranking.html">Clasificación</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./question.html">Crear pregunta</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div class="container d-flex flex-wrap justify-content-center align-content-center" style="height: 80vh;">
+            <div class="col-lg-6 col-md-10 col-sm-12">
+                <div class="register visible" id="register-zone">
+                    <form class=" ">
+                        <h3 class="">Registro</h3>
+                        <div class="">
+                            <label for="userName" class="form-label">Ingresa un nombre para registrar tu
+                                progreso</label>
+                            <input type="text" class="form-control" id="userName">
+                            <button type="button" class="btn btn-primary mt-2"
+                                onclick="primeraRonda(); getQuestionByLevel(1)">
+                                Continuar
+                            </button>
+                        </div>
+                    </form>
+                </div>
+                <div class="ronda hide" id="ronda1">
+                    Ronda 1
+                    <div class="mb-2" id="pregunta-r1"></div>
+                    <div id="opciones-r1"></div>
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal1" >
+                        Continuar
+                    </button>
+                    <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Considera lo siguiente</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    Si tu respuesta no es correcta el juego termina y pierdes los puntos ganados, estas seguro de continuar
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" onclick="playerEnd()"
+                                        >Me retiro</button>
+                                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal" onclick="selectedOption(1)">Continuemos</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="ronda hide" id="ronda2">
+                    Ronda 2
+                    <div class="mb-2" id="pregunta-r2"></div>
+                    <div id="opciones-r2"></div>
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal2">
+                        Continuar
+                    </button>
+                    <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Considera lo siguiente</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    Si tu respuesta no es correcta el juego termina y pierdes los puntos ganados, estas seguro de continuar
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" onclick="playerEnd()"
+                                        >Me retiro</button>
+                                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal" onclick="selectedOption(2)">Continuemos</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="ronda hide" id="ronda3">
+                    Ronda 3
+                    <div class="mb-2" id="pregunta-r3"></div>
+                    <div id="opciones-r3"></div>
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal3">
+                        Continuar
+                    </button>
+                    <div class="modal fade" id="exampleModal3" tabindex="-1" aria-labelledby="exampleModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Considera lo siguiente</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    Si tu respuesta no es correcta el juego termina y pierdes los puntos ganados, estas seguro de continuar
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" onclick="playerEnd()"
+                                        >Me retiro</button>
+                                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal" onclick="selectedOption(3)">Continuemos</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="ronda hide" id="ronda4">
+                    Ronda 4
+                    <div class="mb-2" id="pregunta-r4"></div>
+                    <div id="opciones-r4"></div>
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal4">
+                        Continuar
+                    </button>
+                    <div class="modal fade" id="exampleModal4" tabindex="-1" aria-labelledby="exampleModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Considera lo siguiente</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    Si tu respuesta no es correcta el juego termina y pierdes los puntos ganados, estas seguro de continuar
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" onclick="playerEnd()"
+                                        >Me retiro</button>
+                                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal" onclick="selectedOption(4)">Continuemos</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="ronda hide" id="ronda5">
+                    Ronda 5
+                    <div class="mb-2" id="pregunta-r5"></div>
+                    <div id="opciones-r5"></div>
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal5">
+                        Continuar
+                    </button>
+                    <div class="modal fade" id="exampleModal5" tabindex="-1" aria-labelledby="exampleModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Considera lo siguiente</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    Si tu respuesta no es correcta el juego termina y pierdes los puntos ganados, estas seguro de continuar
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" onclick="playerEnd()"
+                                        >Me retiro</button>
+                                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal" onclick="selectedOption(5)" >Continuemos</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="ronda hide" id="ganar">
+                    Ganaste!
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="container-fluid position-fixed bottom-0 bg-light">
+        <div class="d-flex flex-wrap justify-content-end">
+            <p class="p-2">Prueba de ingreso a Sofka U</p>
+
+            <a class="p-2 btn btn-light" href="">Jehison Galarza <img src="./img/github.png" width="28"
+                    height="28" /></a>
+        </div>
+    </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="./js/question.js"></script>
+</body>
+
+</html>

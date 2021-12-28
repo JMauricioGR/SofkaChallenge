@@ -6,7 +6,6 @@
 package com.challenge.qanda.repository.crud;
 
 import com.challenge.qanda.model.Player;
-import java.util.Optional;
 import org.springframework.data.mongodb.repository.MongoRepository;
 
 /**
@@ -14,5 +13,5 @@ import org.springframework.data.mongodb.repository.MongoRepository;
  * @author JehisonGalarza
  */
 public interface PlayerCrudRepository extends MongoRepository<Player, Integer> {
-    Optional<Player> findTop1ByOrderByIdPlayerDesc();
+    
 }

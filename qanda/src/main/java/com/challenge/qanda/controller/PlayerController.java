@@ -30,11 +30,6 @@ public class PlayerController {
     @Autowired
     private PlayerService playerService;
     
-    @GetMapping("last")
-    public Optional<Player> getLastPlayer(){
-        return playerService.getLastPlayer();
-    }
-    
     @GetMapping("all")
     public List<Player> getAllPlayers(){
         return playerService.getAllPlayers();

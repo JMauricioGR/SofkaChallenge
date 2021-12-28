@@ -7,6 +7,7 @@ package com.challenge.qanda.repository.crud;
 
 import com.challenge.qanda.model.Options;
 import java.util.List;
+import java.util.Optional;
 import org.springframework.data.mongodb.repository.MongoRepository;
 
 /**
@@ -15,4 +16,5 @@ import org.springframework.data.mongodb.repository.MongoRepository;
  */
 public interface OptionsCrudRepository extends MongoRepository<Options, Integer>{
     List<Options> findByIdquestion(Integer id);
+    //List<Options> findTop1ByOrderByIdAnswerDesc();
 }

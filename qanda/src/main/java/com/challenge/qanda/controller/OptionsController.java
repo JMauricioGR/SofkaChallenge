@@ -8,6 +8,7 @@ package com.challenge.qanda.controller;
 import com.challenge.qanda.model.Options;
 import com.challenge.qanda.service.OptionsService;
 import java.util.List;
+import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -39,4 +40,9 @@ public class OptionsController {
     public Options createOption(@RequestBody Options option){
         return optionsService.createOption(option);
     }
+    
+//    @GetMapping("last")
+//    public List<Options> lastOption(){
+//        return optionsService.lastOption();
+//    }
 }

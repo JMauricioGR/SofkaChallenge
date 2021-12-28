@@ -52,7 +52,7 @@ public class QuestionController {
         return questionService.getQuestionsDesc();
     }
     
-    @GetMapping("{level}")
+    @GetMapping("level/{level}")
     public List<Question> getQuestionsByLevel(@PathVariable("level") Integer level){
         return questionService.getQuestionsByLevel(level);
     }

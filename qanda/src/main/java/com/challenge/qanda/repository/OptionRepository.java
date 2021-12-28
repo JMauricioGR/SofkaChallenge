@@ -8,6 +8,7 @@ package com.challenge.qanda.repository;
 import com.challenge.qanda.model.Options;
 import com.challenge.qanda.repository.crud.OptionsCrudRepository;
 import java.util.List;
+import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -27,4 +28,8 @@ public class OptionRepository {
     public Options createOptions(Options option){
         return optionsCrudRepository.save(option);
     }
+    
+//    public List<Options> lastOption(){
+//        return optionsCrudRepository.findTop1ByOrderByIdAnswerDesc();
+//    }
 }

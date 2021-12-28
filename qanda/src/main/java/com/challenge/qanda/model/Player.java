@@ -8,7 +8,6 @@ package com.challenge.qanda.model;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 /**
@@ -20,8 +19,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Player {    
-    @Id
-    private Integer idPlayer;
+    
     private String name;
     private Integer prize;
     private Integer level;

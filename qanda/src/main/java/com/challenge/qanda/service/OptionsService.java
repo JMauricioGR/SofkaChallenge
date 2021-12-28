@@ -8,6 +8,7 @@ package com.challenge.qanda.service;
 import com.challenge.qanda.model.Options;
 import com.challenge.qanda.repository.OptionRepository;
 import java.util.List;
+import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -27,4 +28,8 @@ public class OptionsService {
     public Options createOption(Options option){
         return optionRepository.createOptions(option);
     }
+    
+//    public List<Options> lastOption(){
+//        return optionRepository.lastOption();
+//    }
 }
