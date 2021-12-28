@@ -4,7 +4,7 @@ $(document).ready(function(){
 
 function getAllPlayers(){
     $.ajax({
-        url:"http://localhost:8080/api/player/all",
+        url:"http://150.136.122.75:8080/api/player/all",
         type: 'GET',
         contentType: "application/JSON",
 
@@ -30,7 +30,7 @@ function savePlayer( name, prize, level){
     let datajson = JSON.stringify(sendInfo);
 
         $.ajax({
-            url: "http://localhost:8080/api/player/new",
+            url: "http://150.136.122.75:8080/api/player/new",
             type: "POST",
             contentType: "application/JSON",
             data: datajson,

@@ -13,7 +13,7 @@ function saveOption(idQuest, optVal, valiVal) {
     let datajson = JSON.stringify(sendInfo);
 
     $.ajax({
-        url: "http://localhost:8080/api/options/new",
+        url: "http://150.136.122.75:8080/api/options/new",
         type: "POST",
         contentType: "application/JSON",
         data: datajson,
@@ -29,7 +29,7 @@ function saveOption(idQuest, optVal, valiVal) {
 function getOptionsByIdQuestion(id, level) {
     let levelNum = level;
     $.ajax({
-        url: "http://localhost:8080/api/options/" + id,
+        url: "http://150.136.122.75:8080/api/options/" + id,
         type: 'GET',
         contentType: "application/JSON",
 

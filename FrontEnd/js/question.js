@@ -3,7 +3,7 @@
 
 function getAllQuestions(){
     $.ajax({
-        url:"http://localhost:8080/api/question/all",
+        url:"http://150.136.122.75:8080/api/question/all",
         type: 'GET',
         contentType: "application/JSON",
 
@@ -33,7 +33,7 @@ function saveQuestion(id){
     console.log('Los datos de la petición son: ' + datajson);
 
         $.ajax({
-            url: "http://localhost:8080/api/question/new",
+            url: "http://150.136.122.75:8080/api/question/new",
             type: "POST",
             contentType: "application/JSON",
             data: datajson,
@@ -52,7 +52,7 @@ function getLastQuestion(){
 
     sessionStorage.setItem('idQuestionVal', "");
     $.ajax({
-        url:"http://localhost:8080/api/question/last",
+        url:"http://150.136.122.75:8080/api/question/last",
         type: 'GET',
         contentType: "application/JSON",
 
@@ -92,7 +92,7 @@ function getLastQuestion(){
 function getQuestionByLevel(level){
     let levelScr = level;
     $.ajax({
-        url:"http://localhost:8080/api/question/level/" + level,
+        url:"http://150.136.122.75:8080/api/question/level/" + level,
         type: 'GET',
         contentType: "application/JSON",
 
